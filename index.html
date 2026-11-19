@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>★ Elites Clan ✦ | Official Community</title>
+  <title>★ Elites Clan ✦ | Official Community & Recruitment</title>
   <link href="https://googleapis.com" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
@@ -11,16 +11,18 @@
       background-color: #050a14;
       background-image:
         radial-gradient(circle at 75% 25%, rgba(37, 99, 235, 0.3), transparent 45%),
+        radial-gradient(circle at 15% 75%, rgba(14, 165, 233, 0.12), transparent 40%),
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 100% 100%, 38px 38px, 38px 38px;
+      background-size: 100% 100%, 100% 100%, 38px 38px, 38px 38px;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
     }
     header {
       display: flex; justify-content: space-between; align-items: center;
       padding: 20px 8%; border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(5, 10, 20, 0.95); position: sticky; top: 0; z-index: 10; flex-wrap: wrap; gap: 14px;
+      background: rgba(5, 10, 20, 0.95); backdrop-filter: blur(10px);
+      position: sticky; top: 0; z-index: 10; flex-wrap: wrap; gap: 14px;
     }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .brand-short { font-family: 'Anton', sans-serif; font-size: 1.7rem; font-style: italic; color: #fff; text-shadow: 0 0 12px #3b82f6; }
@@ -29,8 +31,15 @@
     nav a {
       text-decoration: none; color: #cbd5e1; font-size: 0.88rem; font-weight: 600;
       padding: 8px 14px; border-radius: 8px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.2s;
     }
     nav a:hover { color: #fff; background: rgba(59,130,246,0.25); border-color: #60a5fa; }
+    .music-btn {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(96, 165, 250, 0.35);
+      padding: 8px 16px; border-radius: 999px; color: #ffffff; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    }
+    .toggle-dot { width: 10px; height: 10px; border-radius: 50%; background-color: #64748b; transition: all 0.3s; }
     .hero { display: flex; align-items: center; justify-content: space-between; padding: 55px 8% 75px; gap: 40px; flex-wrap: wrap; }
     .hero-left { max-width: 540px; }
     .badge { font-size: 0.78rem; font-weight: 800; letter-spacing: 2.5px; color: #7dd3fc; margin-bottom: 12px; }
@@ -38,24 +47,33 @@
     .title span { display: block; font-size: 4.3rem; color: #93c5fd; }
     .desc { font-size: 1.05rem; line-height: 1.65; color: #cbd5e1; margin-bottom: 30px; }
     .btns { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-main { background: #7dd3fc; color: #050a14; text-decoration: none; font-weight: 800; padding: 14px 26px; border-radius: 6px; box-shadow: 0 0 25px rgba(56,189,248,0.4); }
-    .btn-alt { background: rgba(255,255,255,0.07); color: #fff; text-decoration: none; font-weight: 700; padding: 14px 26px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.25); }
+    .btn-main {
+      background: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 100%);
+      color: #050a14; text-decoration: none; font-weight: 800; padding: 14px 26px; border-radius: 6px;
+      box-shadow: 0 0 25px rgba(56,189,248,0.4); display: inline-block; transition: transform 0.2s;
+    }
+    .btn-main:hover { transform: translateY(-2px); }
+    .btn-alt {
+      background: rgba(255,255,255,0.07); color: #fff; text-decoration: none; font-weight: 700;
+      padding: 14px 26px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.25); display: inline-block;
+    }
     .emblem {
-      width: 390px; max-width: 100%; aspect-ratio: 1/1; border-radius: 16px;
+      width: 400px; max-width: 100%; aspect-ratio: 1/1; border-radius: 16px;
       border: 1px solid rgba(59,130,246,0.6); box-shadow: 0 0 50px rgba(37,99,235,0.45), inset 0 0 60px rgba(29,78,216,0.55);
       background: radial-gradient(circle, #1d4ed8 0%, #09132b 58%, #03060c 100%);
       display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
     }
-    .emblem-title { font-family: 'Anton', sans-serif; font-size: 4.3rem; line-height: 0.92; font-style: italic; text-shadow: 0 0 25px #2563eb; }
-    .section { padding: 60px 8%; border-top: 1px solid rgba(255,255,255,0.08); }
+    .emblem-title { font-family: 'Anton', sans-serif; font-size: 4.4rem; line-height: 0.92; font-style: italic; text-shadow: 0 0 25px #2563eb; }
+    .section { padding: 65px 8%; border-top: 1px solid rgba(255,255,255,0.08); }
     .sec-title { font-family: 'Anton', sans-serif; font-size: 2.5rem; font-style: italic; margin-bottom: 8px; }
     .sec-sub { color: #94a3b8; margin-bottom: 28px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .card { background: rgba(15,23,42,0.85); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; }
+    .card { background: rgba(15,23,42,0.85); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; transition: border-color 0.2s; }
+    .card:hover { border-color: #38bdf8; }
     .tag { display: inline-block; font-size: 0.74rem; font-weight: 800; color: #7dd3fc; background: rgba(56,189,248,0.15); padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
     .card h3 { font-size: 1.2rem; margin-bottom: 12px; }
     ul { list-style: none; display: flex; flex-direction: column; gap: 10px; color: #e2e8f0; font-size: 0.94rem; line-height: 1.5; }
-    .rules-box { background: rgba(15,23,42,0.92); border: 1px solid rgba(96,165,250,0.45); border-radius: 14px; padding: 30px; margin-top: 24px; }
+    .rules-box { background: linear-gradient(135deg, rgba(30,58,138,0.35) 0%, rgba(15,23,42,0.92) 100%); border: 1px solid rgba(96,165,250,0.45); border-radius: 14px; padding: 30px; margin-top: 24px; }
     .warn { margin-top: 18px; background: rgba(239,68,68,0.18); border: 1px solid rgba(248,113,113,0.45); color: #fecaca; padding: 14px; border-radius: 8px; font-weight: 700; }
     footer { text-align: center; padding: 28px; color: #94a3b8; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.08); }
   </style>
@@ -73,6 +91,10 @@
       <a href="#gaming">Gaming Hubs</a>
       <a href="#rules">Requirements & Rules</a>
     </nav>
+    <button class="music-btn" onclick="toggleMusic()">
+      <span class="toggle-dot" id="dot"></span>
+      <span id="music-label">Music off</span>
+    </button>
   </header>
 
   <section class="hero" id="home">
@@ -83,7 +105,7 @@
         Welcome to <strong>Elites</strong>! Looking for a chill community to hang out, game, and make new friends? We are an active, brand-new server built around getting together, attending trends, competing in clan tryouts, and playing other games too — not just Evade!
       </p>
       <div class="btns">
-        <a href="https://discord.gg/KV9f2aBzG" target="_blank" class="btn-main">Join Discord ↗</a>
+        <a href="https://discord.gg" target="_blank" class="btn-main">Join Discord ↗</a>
         <a href="#rules" class="btn-alt">See requirements & rules</a>
       </div>
     </div>
@@ -134,20 +156,44 @@
     <h2 class="sec-title">Roblox & Gaming Hubs</h2>
     <p class="sec-sub">We play a variety of games together — not just Evade! Pick your roles in <strong>#game-roles</strong>.</p>
     <div class="grid">
-      <div class="card"><span class="tag">⚔️ Division 01</span><h3>Blox Fruits & Rivals</h3><p style="color:#cbd5e1;">Competitive PvP, ranked duos, bounty hunting, raid carries, and crew wars.</p></div>
-      <div class="card"><span class="tag">🏃 Division 02</span><h3>Evade & Other Games</h3><p style="color:#cbd5e1;">High-round survival streaks, fast revives, plus rotating multiplayer games with the community.</p></div>
-      <div class="card"><span class="tag">🔫 Division 03</span><h3>Da Hood, MM2 & More</h3><p style="color:#cbd5e1;">Turf protection, 1v1 training, private server matches, godly trading, and new game nights.</p></div>
-      <div class="card"><span class="tag">🏆 Recruitment</span><h3>Clan Tryouts & Owners</h3><p style="color:#cbd5e1;"><strong>Clan Tryouts</strong> and the <strong>Game Owners Meeting Room</strong> are officially open! Test for the roster today.</p></div>
-    </div>
-  </section>
+      <div class="card">
+        <span class="tag">⚔️ Division 01</span>
+        <h3>Blox Fruits & Rivals</h3>
+        <p style="color:#cbd5e1;">Competitive PvP, ranked duos, bounty hunting, raid carries, and crew wars.</p>
+      </div>
+      <div class="card">
+        <span class="tag">🏃 Division 02</span>
+        <h3>Evade & Other Games</h3>
+        <p style="color:#cbd5e1;">High-round survival streaks, fast revives, plus rotating multiplayer games with the community.</p>
+      </div>
+      <div class="card">
+        <span class="tag">🔫 Division 03</span>
+        <h3>Da Hood, MM2 & More</h3>
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
-  <section class="section" id="rules">
-    <h2 class="sec-title">Requirements & Server Rules</h2>
-    <p class="sec-sub">Welcome to Elites! Please follow these simple rules to keep the server chill and fun for everyone.</p>
-    <div class="rules-box">
-      <span class="tag">📜 Official Server Rules</span>
-      <h3 style="font-size: 1.4rem; margin-bottom: 16px;">SERVER RULES</h3>
-      <ul>
-        <li>👑 <strong>1. Be Respectful:</strong> No toxicity, bullying, or hate speech. Treat everyone with kindness.</li>
-        <li>🕊️ <strong>2. No Drama:</strong> Keep arguments out of public chats. If you have beef, take it to DMs.</li>
-        <li>🌸 <strong>3. Keep it Clean:</strong> No NSFW, 18+, or highly offensive images and text.</li>
+  <script>
+    const audio = document.getElementById('bg-music');
+    const label = document.getElementById('music-label');
+    const dot = document.getElementById('dot');
+    let playing = false;
+
+    function toggleMusic() {
+      if (!playing) {
+        audio.play().catch(() => alert("Upload an MP3 file named 'music.mp3' into your GitHub repository to enable music!"));
+        label.textContent = "Music on";
+        dot.style.backgroundColor = "#38bdf8";
+        dot.style.boxShadow = "0 0 10px #38bdf8";
+      } else {
+        audio.pause();
+        label.textContent = "Music off";
+        dot.style.backgroundColor = "#64748b";
+        dot.style.boxShadow = "none";
+      }
+      playing = !playing;
+    }
+  </script>
+
+</body>
+</html>
