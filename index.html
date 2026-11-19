@@ -3,295 +3,421 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>★ Elites Empire ✦ | Official Roblox Clan</title>
+  <title>★ Elites Clan ✦ | Official Community & Recruitment</title>
+  <link href="https://googleapis.com" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       scroll-behavior: smooth;
     }
 
     body {
-      background-color: #050505;
-      background-image:
-        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.08), transparent 45%),
-        radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.05), transparent 45%);
+      background-color: #050a14;
+      background-image: 
+        radial-gradient(circle at 75% 25%, rgba(37, 99, 235, 0.28), transparent 45%),
+        radial-gradient(circle at 15% 75%, rgba(14, 165, 233, 0.12), transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 38px 38px, 38px 38px;
       color: #ffffff;
+      font-family: 'Inter', sans-serif;
       min-height: 100vh;
-      line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header & Hero */
+    /* Navigation Bar */
     header {
-      text-align: center;
-      padding: 80px 20px 60px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      position: sticky;
+      top: 0;
+      background: rgba(5, 10, 20, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 100;
     }
 
-    .ornament {
-      color: #a855f7;
-      letter-spacing: 4px;
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-      text-transform: uppercase;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 3px;
+    .brand-short {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.7rem;
+      font-style: italic;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 22px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .brand-full {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      margin-bottom: 16px;
-      background: linear-gradient(90deg, #ffffff, #c084fc);
+      color: #93c5fd;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* Music Button */
+    .music-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      padding: 8px 16px;
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .toggle-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #64748b;
+      transition: all 0.3s;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 55px 8% 80px;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-left {
+      max-width: 550px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #7dd3fc;
+      margin-bottom: 14px;
+    }
+
+    .title {
+      font-family: 'Anton', sans-serif;
+      font-size: 5.8rem;
+      line-height: 0.9;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+
+    .title span {
+      display: block;
+      font-size: 4.5rem;
+      background: linear-gradient(180deg, #ffffff 20%, #93c5fd 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .subtitle {
-      max-width: 680px;
-      margin: 0 auto 32px;
-      color: #b3b3b3;
-      font-size: 1.1rem;
+    .description {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #94a3b8;
+      margin-bottom: 34px;
     }
 
-    .btn-discord {
-      display: inline-block;
-      background: linear-gradient(135deg, #7e22ce, #5865F2);
-      color: #ffffff;
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 100%);
+      color: #050a14;
       text-decoration: none;
-      padding: 14px 36px;
-      border-radius: 8px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 15px 28px;
+      border-radius: 6px;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(126, 34, 206, 0.4);
     }
 
-    .btn-discord:hover {
+    .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(126, 34, 206, 0.65);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.55);
     }
 
-    /* Sections & Grid */
-    section {
-      padding: 60px 0;
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.04);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 15px 28px;
+      border-radius: 6px;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Right Side Lightning Emblem Card */
+    .hero-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      min-width: 310px;
+    }
+
+    .emblem-box {
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      box-shadow: 
+        0 0 50px rgba(37, 99, 235, 0.35),
+        inset 0 0 60px rgba(29, 78, 216, 0.45);
+      background: radial-gradient(circle at center, #1d4ed8 0%, #09132b 55%, #03060c 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .emblem-box::before {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      background: conic-gradient(from 0deg, transparent 0%, rgba(96, 165, 250, 0.25) 25%, transparent 50%, rgba(56, 189, 248, 0.25) 75%, transparent 100%);
+      animation: spinGlow 12s linear infinite;
+    }
+
+    @keyframes spinGlow {
+      100% { transform: rotate(360deg); }
+    }
+
+    .emblem-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .crown {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 6px;
+      filter: drop-shadow(0 0 18px #60a5fa);
+    }
+
+    .emblem-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 4.5rem;
+      line-height: 0.92;
+      font-style: italic;
+      text-transform: uppercase;
+      color: #ffffff;
+      -webkit-text-stroke: 1.5px #93c5fd;
+      text-shadow: 
+        0 0 20px #2563eb,
+        0 0 40px #3b82f6;
+    }
+
+    .emblem-sub {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color: #bae6fd;
+      text-transform: uppercase;
+    }
+
+    /* Sections & Feature Cards */
+    .section {
+      padding: 65px 8%;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .section-header {
+      margin-bottom: 36px;
     }
 
     .section-title {
-      text-align: center;
-      font-size: 1.8rem;
+      font-family: 'Anton', sans-serif;
+      font-size: 2.6rem;
+      font-style: italic;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 40px;
-      color: #f3e8ff;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
     }
 
-    .grid {
+    .section-sub {
+      color: #94a3b8;
+      font-size: 0.98rem;
+    }
+
+    .grid-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
     }
 
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
     .card {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(15, 23, 42, 0.65);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
-      padding: 28px;
-      transition: border-color 0.2s, transform 0.2s;
+      padding: 26px;
+      transition: transform 0.2s, border-color 0.2s, background 0.2s;
     }
 
     .card:hover {
-      border-color: rgba(192, 132, 252, 0.4);
       transform: translateY(-4px);
+      border-color: #38bdf8;
+      background: rgba(30, 41, 59, 0.75);
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #7dd3fc;
+      background: rgba(56, 189, 248, 0.12);
+      padding: 5px 11px;
+      border-radius: 4px;
+      margin-bottom: 14px;
     }
 
     .card h3 {
       font-size: 1.25rem;
-      margin-bottom: 16px;
-      color: #d8b4fe;
+      margin-bottom: 14px;
+      color: #f8fafc;
+    }
+
+    .feature-list {
+      list-style: none;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 10px;
     }
 
-    .card ul {
-      list-style: none;
-    }
-
-    .card ul li {
-      padding: 8px 0;
-      color: #d4d4d8;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    .feature-list li {
+      font-size: 0.94rem;
+      color: #cbd5e1;
+      line-height: 1.45;
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-    }
-
-    .card ul li:last-child {
-      border-bottom: none;
+      gap: 8px;
     }
 
     .arrow {
-      color: #a855f7;
-      font-weight: bold;
+      color: #38bdf8;
+      font-weight: 800;
     }
 
-    /* Games Tag Strip */
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
+    .card p {
+      font-size: 0.94rem;
+      color: #94a3b8;
+      line-height: 1.55;
     }
 
-    .game-badge {
-      background: rgba(168, 85, 247, 0.1);
-      border: 1px solid rgba(168, 85, 247, 0.3);
-      border-radius: 8px;
-      padding: 16px;
-      text-align: center;
-      font-weight: 600;
-      color: #f3e8ff;
-    }
-
-    /* Rules Box */
+    /* Rules Highlight Box */
     .rules-box {
-      background: rgba(239, 68, 68, 0.06);
-      border: 1px solid rgba(239, 68, 68, 0.25);
-      border-radius: 12px;
-      padding: 28px;
-      max-width: 750px;
-      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.35) 0%, rgba(15, 23, 42, 0.85) 100%);
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      border-radius: 14px;
+      padding: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
     }
 
-    .rules-box h3 {
-      color: #fca5a5;
-      margin-bottom: 14px;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .rules-box ul {
-      list-style: none;
-      text-align: center;
-      color: #e4e4e7;
-    }
-
-    .rules-box li {
-      margin: 8px 0;
-    }
-
-    /* Footer */
     footer {
       text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      color: #71717a;
-      font-size: 0.9rem;
+      padding: 34px 8%;
+      color: #64748b;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.1rem;
-      }
+    @media (max-width: 768px) {
+      .title { font-size: 4.2rem; }
+      .title span { font-size: 3.2rem; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
   <header>
-    <div class="container">
-      <div class="ornament">╭─ ✧ ─ 👑 ─ ✧ ─╮</div>
-      <h1>★ Elites Empire ✦</h1>
-      <p class="subtitle">
-        Looking for a chill community to hang out, game, and make new friends? Welcome to Elites! We are an active, brand-new server built around getting together and having a great time.
-      </p>
-      <a href="YOUR_DISCORD_INVITE_LINK_HERE" target="_blank" class="btn-discord">
-        👉 JOIN OUR DISCORD TODAY
-      </a>
+    <div class="brand">
+      <div class="brand-short">★ EC</div>
+      <div class="brand-divider"></div>
+      <div class="brand-full">ELITES CLAN</div>
     </div>
+
+    <nav class="nav-links">
+      <a href="#offer">What We Offer</a>
+      <a href="#gaming">Gaming Hubs</a>
+      <a href="#requirements">Rules & Requirements</a>
+    </nav>
+
+    <button class="music-btn" onclick="toggleMusic()">
+      <span class="toggle-dot" id="dot"></span>
+      <span id="music-label">Music off</span>
+    </button>
   </header>
 
-  <main class="container">
-
-    <!-- Features & Community -->
-    <section>
-      <h2 class="section-title">Server Overview</h2>
-      <div class="grid">
-
-        <div class="card">
-          <h3>✨ What We Offer</h3>
-          <ul>
-            <li><span class="arrow">→</span> Easy Onboarding & Self-Roles</li>
-            <li><span class="arrow">→</span> Server Introductions</li>
-            <li><span class="arrow">→</span> Level Rewards & Bot Commands</li>
-            <li><span class="arrow">→</span> Staff Applications & Collabs Open!</li>
-            <li><span class="arrow">→</span> Server Economy & Fun Bots</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>💎 Server Perks & Milestones</h3>
-          <ul>
-            <li><span class="arrow">→</span> Brand New Server — Get in early and grab exclusive early member roles!</li>
-            <li><span class="arrow">→</span> Booster Perks — Custom roles, exclusive chat access, and special perks for server boosters!</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>🌐 Community Hub</h3>
-          <ul>
-            <li><span class="arrow">→</span> Main Chat & Lounge Channels</li>
-            <li><span class="arrow">→</span> Dedicated Counter Channel</li>
-            <li><span class="arrow">→</span> Gallery & Artist/Designer Showcases</li>
-            <li><span class="arrow">→</span> Giveaways, Server Events & Suggestions</li>
-            <li><span class="arrow">→</span> Partner Program Open</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Roblox & Gaming Hubs -->
-    <section>
-      <h2 class="section-title">🎮 Roblox & Gaming Hubs</h2>
-      <p style="text-align: center; color: #a1a1aa; margin-bottom: 24px;">
-        Clan Tryouts & Game Owners Meeting Room Open! Jump into our dedicated channels:
-      </p>
-      <div class="games-grid">
-        <div class="game-badge">⚔️ Blox Fruits</div>
-        <div class="game-badge">🎯 Rivals</div>
-        <div class="game-badge">🏃 Evade</div>
-        <div class="game-badge">🔫 Da Hood</div>
-        <div class="game-badge">🔪 Murder Mystery 2</div>
-      </div>
-    </section>
-
-    <!-- Server Rules -->
-    <section>
-      <div class="rules-box">
-        <h3>🚨 Server Rules & Age Requirements</h3>
-        <ul>
-          <li><strong>→ Must be 13+ to join</strong></li>
-          <li><strong>→ Respect everyone, follow the rules, and keep it friendly!</strong></li>
-        </ul>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© 2026 ★ Elites Empire ✦ | Official Roblox Clan & Community</p>
-  </footer>
-
-</body>
-</html>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-left">
