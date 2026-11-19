@@ -1,173 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>★ Elites Clan ✦ | Official Community & Recruitment</title>
-  <link href="https://googleapis.com" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-    body {
-      background-color: #050a14;
-      background-image:
-        radial-gradient(circle at 75% 25%, rgba(37, 99, 235, 0.3), transparent 45%),
-        radial-gradient(circle at 15% 75%, rgba(14, 165, 233, 0.12), transparent 40%),
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 38px 38px, 38px 38px;
-      color: #ffffff;
-      font-family: 'Inter', sans-serif;
-    }
-    header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 8%; border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(5, 10, 20, 0.95); backdrop-filter: blur(10px);
-      position: sticky; top: 0; z-index: 10; flex-wrap: wrap; gap: 14px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand-short { font-family: 'Anton', sans-serif; font-size: 1.7rem; font-style: italic; color: #fff; text-shadow: 0 0 12px #3b82f6; }
-    .brand-full { font-size: 0.85rem; font-weight: 800; letter-spacing: 2.5px; color: #93c5fd; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 12px; }
-    nav { display: flex; gap: 10px; flex-wrap: wrap; }
-    nav a {
-      text-decoration: none; color: #cbd5e1; font-size: 0.88rem; font-weight: 600;
-      padding: 8px 14px; border-radius: 8px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
-      transition: all 0.2s;
-    }
-    nav a:hover { color: #fff; background: rgba(59,130,246,0.25); border-color: #60a5fa; }
-    .music-btn {
-      display: flex; align-items: center; gap: 10px;
-      background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(96, 165, 250, 0.35);
-      padding: 8px 16px; border-radius: 999px; color: #ffffff; font-size: 0.85rem; font-weight: 600; cursor: pointer;
-    }
-    .toggle-dot { width: 10px; height: 10px; border-radius: 50%; background-color: #64748b; transition: all 0.3s; }
-    .hero { display: flex; align-items: center; justify-content: space-between; padding: 55px 8% 75px; gap: 40px; flex-wrap: wrap; }
-    .hero-left { max-width: 540px; }
-    .badge { font-size: 0.78rem; font-weight: 800; letter-spacing: 2.5px; color: #7dd3fc; margin-bottom: 12px; }
-    .title { font-family: 'Anton', sans-serif; font-size: 5.5rem; line-height: 0.92; font-style: italic; margin-bottom: 20px; }
-    .title span { display: block; font-size: 4.3rem; color: #93c5fd; }
-    .desc { font-size: 1.05rem; line-height: 1.65; color: #cbd5e1; margin-bottom: 30px; }
-    .btns { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-main {
-      background: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 100%);
-      color: #050a14; text-decoration: none; font-weight: 800; padding: 14px 26px; border-radius: 6px;
-      box-shadow: 0 0 25px rgba(56,189,248,0.4); display: inline-block; transition: transform 0.2s;
-    }
-    .btn-main:hover { transform: translateY(-2px); }
-    .btn-alt {
-      background: rgba(255,255,255,0.07); color: #fff; text-decoration: none; font-weight: 700;
-      padding: 14px 26px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.25); display: inline-block;
-    }
-    .emblem {
-      width: 400px; max-width: 100%; aspect-ratio: 1/1; border-radius: 16px;
-      border: 1px solid rgba(59,130,246,0.6); box-shadow: 0 0 50px rgba(37,99,235,0.45), inset 0 0 60px rgba(29,78,216,0.55);
-      background: radial-gradient(circle, #1d4ed8 0%, #09132b 58%, #03060c 100%);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-    }
-    .emblem-title { font-family: 'Anton', sans-serif; font-size: 4.4rem; line-height: 0.92; font-style: italic; text-shadow: 0 0 25px #2563eb; }
-    .section { padding: 65px 8%; border-top: 1px solid rgba(255,255,255,0.08); }
-    .sec-title { font-family: 'Anton', sans-serif; font-size: 2.5rem; font-style: italic; margin-bottom: 8px; }
-    .sec-sub { color: #94a3b8; margin-bottom: 28px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .card { background: rgba(15,23,42,0.85); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; transition: border-color 0.2s; }
-    .card:hover { border-color: #38bdf8; }
-    .tag { display: inline-block; font-size: 0.74rem; font-weight: 800; color: #7dd3fc; background: rgba(56,189,248,0.15); padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
-    .card h3 { font-size: 1.2rem; margin-bottom: 12px; }
-    ul { list-style: none; display: flex; flex-direction: column; gap: 10px; color: #e2e8f0; font-size: 0.94rem; line-height: 1.5; }
-    .rules-box { background: linear-gradient(135deg, rgba(30,58,138,0.35) 0%, rgba(15,23,42,0.92) 100%); border: 1px solid rgba(96,165,250,0.45); border-radius: 14px; padding: 30px; margin-top: 24px; }
-    .warn { margin-top: 18px; background: rgba(239,68,68,0.18); border: 1px solid rgba(248,113,113,0.45); color: #fecaca; padding: 14px; border-radius: 8px; font-weight: 700; }
-    footer { text-align: center; padding: 28px; color: #94a3b8; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.08); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELITES Discord Community</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#020b1d;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(0,102,255,.13) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,102,255,.13) 1px, transparent 1px);
+background-size:45px 45px;
+z-index:-2;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+border-bottom:1px solid rgba(255,255,255,.1);
+background:#010814;
+}
+
+.logo{
+font-size:30px;
+font-weight:900;
+color:#62a0ff;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:20px;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:80px;
+padding:50px 10%;
+}
+
+.hero-left{
+max-width:550px;
+}
+
+.small-title{
+letter-spacing:3px;
+font-size:12px;
+color:#62a0ff;
+}
+
+.hero h1{
+font-size:90px;
+line-height:85px;
+margin:15px 0;
+font-weight:900;
+}
+
+.hero p{
+line-height:1.8;
+opacity:.9;
+}
+
+.buttons{
+margin-top:25px;
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:14px 25px;
+text-decoration:none;
+border-radius:8px;
+font-weight:700;
+transition:.3s;
+}
+
+.primary{
+background:#62a0ff;
+color:white;
+}
+
+.primary:hover{
+box-shadow:0 0 20px #62a0ff;
+}
+
+.secondary{
+border:1px solid #62a0ff;
+color:white;
+}
+
+.hero-right img{
+width:420px;
+max-width:100%;
+border:2px solid #62a0ff;
+border-radius:12px;
+box-shadow:0 0 30px rgba(98,160,255,.5);
+}
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+font-size:48px;
+margin-bottom:30px;
+}
+
+.card{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.08);
+padding:30px;
+border-radius:15px;
+}
+
+.card ul{
+padding-left:20px;
+}
+
+.card li{
+margin:12px 0;
+}
+
+footer{
+padding:30px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.1);
+margin-top:50px;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero h1{
+font-size:65px;
+line-height:65px;
+}
+
+.buttons{
+justify-content:center;
+flex-wrap:wrap;
+}
+}
+</style>
 </head>
 <body>
 
-  <header>
-    <a href="#home" class="brand">
-      <div class="brand-short">★ EC</div>
-      <div class="brand-full">ELITES CLAN</div>
-    </a>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#offer">What We Offer</a>
-      <a href="#gaming">Gaming Hubs</a>
-      <a href="#rules">Requirements & Rules</a>
-    </nav>
-    <button class="music-btn" onclick="toggleMusic()">
-      <span class="toggle-dot" id="dot"></span>
-      <span id="music-label">Music off</span>
-    </button>
-  </header>
+<nav>
+<div class="logo">ELITES</div>
 
-  <section class="hero" id="home">
-    <div class="hero-left">
-      <div class="badge">★ ELITES CLAN ✦ • ROBLOX & GAMING COMMUNITY</div>
-      <h1 class="title">ELITES <span>CLAN</span></h1>
-      <p class="desc">
-        Welcome to <strong>Elites</strong>! Looking for a chill community to hang out, game, and make new friends? We are an active, brand-new server built around getting together, attending trends, competing in clan tryouts, and playing other games too — not just Evade!
-      </p>
-      <div class="btns">
-        <a href="https://discord.gg" target="_blank" class="btn-main">Join Discord ↗</a>
-        <a href="#rules" class="btn-alt">See requirements & rules</a>
-      </div>
-    </div>
-    <div class="emblem">
-      <div style="font-size: 4rem; margin-bottom: 8px;">👑</div>
-      <div class="emblem-title">ELITES<br>CLAN</div>
-      <div style="margin-top: 12px; font-size: 0.78rem; font-weight: 800; letter-spacing: 4px; color: #bae6fd;">★ EST. 2026 ✦</div>
-    </div>
-  </section>
+<div>
+<a href="#offer">Features</a>
+<a href="#requirements">Rules</a>
+<a href="https://discord.gg/KV9f2aBzG">Discord</a>
+</div>
+</nav>
 
-  <section class="section" id="offer">
-    <h2 class="sec-title">What We Offer</h2>
-    <p class="sec-sub">Everything waiting for you inside the official Elites Discord server.</p>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">💥 Server Features</span>
-        <h3>Community & Events</h3>
-        <ul>
-          <li>🌪️ <strong>Attend the Trends:</strong> Join server-wide trends, events, and group hangouts!</li>
-          <li>🎮 <strong>All Games Welcome:</strong> We don't just play Evade only — we play Blox Fruits, Rivals, Da Hood, MM2, and other games too!</li>
-          <li>⚡ Easy Onboarding & Self-Roles</li>
-          <li>📈 Level Rewards, Server Economy & Fun Bots</li>
-          <li>🛠️ Staff Applications & Collabs Open!</li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="tag">💎 Server Perks & Milestones</span>
-        <h3>Early & Booster Roles</h3>
-        <ul>
-          <li>✨ <strong>Brand New Server:</strong> Get in early and grab exclusive early member roles!</li>
-          <li>🚀 <strong>Booster Perks:</strong> Custom roles, exclusive chat access (Elite & Immortal lounges), and special perks for server boosters!</li>
-          <li>🎉 Giveaways, Gallery Showcases & Partner Program Open</li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="tag">📋 Clan Requirements</span>
-        <h3>How to Join</h3>
-        <ul>
-          <li>🔞 <strong>Age Requirement:</strong> Must be 13+ to join.</li>
-          <li>🌪️ <strong>Attend the Trends:</strong> Stay active and play different games with the squad.</li>
-          <li>⚔️ <strong>Pass Clan Tryouts:</strong> Complete a tryout in <strong>#clan-tryouts</strong> to earn your official accepted roster role.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<section class="hero">
 
-  <section class="section" id="gaming">
-    <h2 class="sec-title">Roblox & Gaming Hubs</h2>
-    <p class="sec-sub">We play a variety of games together — not just Evade! Pick your roles in <strong>#game-roles</strong>.</p>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">⚔️ Division 01</span>
-        <h3>Blox Fruits & Rivals</h3>
-        <p style="color:#cbd5e1;">Competitive PvP, ranked duos, bounty hunting, raid carries, and crew wars.</p>
-      </div>
-      <div class="card">
-        <span class="tag">🏃 Division 02</span>
-        <h3>Evade & Other Games</h3>
-        <p style="color:#cbd5e1;">High-round survival streaks, fast revives, plus rotating multiplayer games with the community.</p>
-      </div>
-      <div class="card">
-        <span class="tag">🔫 Division 03</span>
-        <h3>Da Hood, MM2 & More</h3>
-        <p style="color:#cbd5e1;">Turf protection, 1v1 training, private server matches, godly trading, and new game nights.</p>
-      </div>
+<div class="hero-left">
+
+<div class="small-title">
+DISCORD COMMUNITY & GAMING HUB
+</div>
+
+<h1>ELITES<br>COMMUNITY</h1>
+
+<p>
+✨ Looking for a chill community to hang out, game, and make new friends? Welcome to Elites! We are an active growing server built around getting together, having fun, gaming, participating in events, and building a friendly community.
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="https://discord.gg/KV9f2aBzG">
+Join Discord
+</a>
+
+<a class="btn secondary" href="#offer">
+View Features
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="your-logo.png" alt="Elites Clan">
+
+</div>
+
+</section>
+
+<section id="offer">
+
+<h2 class="section-title">What We Offer</h2>
+
+<div class="card">
+
+<ul>
+<li>⚡ Easy Onboarding & Self-Roles</li>
+<li>✨ Server Introductions</li>
+<li>📈 Level Rewards & Bot Commands</li>
+<li>🔨 Staff Applications & Collabs Open</li>
+<li>🪙 Server Economy & Fun Bots</li>
+<li>💎 Brand New Server Early Member Perks</li>
+<li>🔷 Booster Roles & Exclusive Chat Access</li>
+<li>💬 Main Community Chat</li>
+<li>🔢 Dedicated Counter Channel</li>
+<li>📷 Gallery & Artist/Designer Showcases</li>
+<li>🎉 Giveaways, Events & Suggestions</li>
+<li>🤝
+
+  <section class="hero">
+
+<div class="hero-left">
+
+<span class="small-title">
+ELITES DISCORD COMMUNITY
+</span>
+
+<h1>
+ELITES
+</h1>
+
+<p>
+Looking for a chill community to hang out, game, and make new friends?
+
+Welcome to Elites! We are an active, brand-new server built around getting together, having a great time, meeting new people, gaming, participating in events, and growing a fun Roblox community.
+</p>
+
+<div class="buttons">
+
+<a href="https://discord.gg/KV9f2aBzG" class="btn primary">
+Join Discord ↗
+</a>
+
+<a href="#requirements" class="btn secondary">
+See Requirements
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+<img src="your-logo.png" alt="Elites Clan">
+</div>
+
+</section>
+
+<section id="offer">
+
+<div class="offer-container">
+
+<div class="small-title">
+ELITES COMMUNITY
+</div>
+
+<h2>What we offer</h2>
+
+<ul>
+<li>⚡ Easy onboarding & self roles</li>
+<li>✨ Server introductions</li>
+<li>📈 Level rewards & bot commands</li>
+<li>🔨 Staff applications & collabs</li>
+<li>💰 Economy & fun bots</li>
+<li>💎 Early member perks</li>
+<li>💠 Booster perks & custom roles</li>
+<li>💬 Main chat & community hub</li>
+<li>📷 Artist & designer showcases</li>
+<li>🎉 Giveaways & server events</li>
+<li>🤝 Partner program</li>
+<li>🎮 Roblox gaming hubs</li>
+<li>⚔️ Blox Fruits & Rivals</li>
+<li>🏃 Evade</li>
+<li>🔫 Da Hood & Murder Mystery 2</li>
+<li>💼 Clan tryouts & game owner meetings</li>
+</ul>
+
+<div class="buttons">
+
+<a href="https://discord.gg/KV9f2aBzG" class="btn primary">
+Join Elites ↗
+</a>
+
+<a href="#requirements" class="btn secondary">
+Requirements ↗
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="requirements">
+
+<div class="offer-container">
+
+<div class="small-title">
+ELITES COMMUNITY
+</div>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>✅ Must be 13+ to join</li>
+<li>📜 Respect everyone</li>
+<li>✅ Follow server rules</li>
+<li>🤝 Keep it friendly</li>
+<li>🚫 No toxicity</li>
+<li>💬 Stay active and have fun</li>
+</ul>
+
+</div>
+
+</section>
+  .offer-container{
+max-width:600px;
+margin:auto;
+}
+
+.offer-container h2{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.offer-container ul{
+padding-left:20px;
+line-height:2;
+}
+
+.small-title{
+font-size:11px;
+letter-spacing:3px;
+color:#75aaff;
+font-weight:700;
+margin-bottom:10px;
+text-transform:uppercase;
+}
+
+.hero{
+min-height:85vh;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:120px;
+padding:50px 12%;
+}
+
+.hero-left{
+max-width:420px;
+}
+
+.hero h1{
+font-size:120px;
+line-height:.9;
+font-weight:900;
+color:white;
+margin-bottom:20px;
+}
+
+.hero-right img{
+width:350px;
+border:2px solid #4c90ff;
+box-shadow:0 0 30px rgba(76,144,255,.4);
+}
+
+#offer,
+#requirements{
+padding:100px 0;
+background:#010b1d;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+  
