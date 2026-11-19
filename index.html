@@ -15,7 +15,7 @@
 
     body {
       background-color: #050505;
-      background-image: 
+      background-image:
         radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.08), transparent 45%),
         radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.05), transparent 45%);
       color: #ffffff;
@@ -24,365 +24,274 @@
       overflow-x: hidden;
     }
 
-    /* Subtle Grid Overlay */
-    .grid-bg {
-      position: fixed;
-      inset: 0;
-      background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: -1;
-      pointer-events: none;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
-    /* Sticky Top Navbar */
+    /* Header & Hero */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 8%;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(5, 5, 5, 0.85);
+      text-align: center;
+      padding: 80px 20px 60px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 900;
-      letter-spacing: 2.5px;
-      font-size: 1.15rem;
-      text-transform: uppercase;
-    }
-
-    .brand span {
-      color: #ffffff;
-      text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .nav-links a {
-      color: #a1a1aa;
-      text-decoration: none;
+    .ornament {
+      color: #a855f7;
+      letter-spacing: 4px;
       font-size: 0.9rem;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: #ffffff;
-    }
-
-    .status-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      background: #ffffff;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #ffffff;
-      animation: pulseDot 1.6s infinite;
-    }
-
-    @keyframes pulseDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.85); }
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px 8% 95px;
-      gap: 50px;
-    }
-
-    .hero-text {
-      max-width: 560px;
-    }
-
-    .subtitle {
-      color: #a1a1aa;
-      font-size: 0.85rem;
-      font-weight: 800;
-      letter-spacing: 3.5px;
+      margin-bottom: 12px;
       text-transform: uppercase;
-      margin-bottom: 14px;
     }
 
     h1 {
-      font-size: 4.6rem;
-      font-weight: 900;
-      line-height: 0.95;
-      text-transform: uppercase;
-      font-style: italic;
-      margin-bottom: 22px;
-      background: linear-gradient(180deg, #ffffff 30%, #71717a 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.2));
-    }
-
-    .hero-text p {
-      color: #d4d4d8;
-      font-size: 1.05rem;
-      margin-bottom: 34px;
-    }
-
-    .btn-group {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: #ffffff;
-      color: #050505;
-      padding: 15px 32px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
-      transition: 0.25s;
-    }
-
-    .btn-primary:hover {
-      background: #e4e4e7;
-      transform: translateY(-3px);
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.65);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      color: #ffffff;
-      padding: 15px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      transition: 0.25s;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: #ffffff;
-      transform: translateY(-3px);
-    }
-
-    /* Monochrome Clan Emblem Box */
-    .emblem-box {
-      position: relative;
-      width: 380px;
-      height: 380px;
-      border-radius: 16px;
-      background: radial-gradient(circle at center, #18181b 0%, #050505 85%);
-      border: 2px solid #ffffff;
-      box-shadow: 0 0 45px rgba(255, 255, 255, 0.18), inset 0 0 30px rgba(255, 255, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 25px;
-      animation: floatCard 4.5s ease-in-out infinite;
-    }
-
-    @keyframes floatCard {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .crown-svg {
-      width: 105px;
-      height: 105px;
-      margin-bottom: 12px;
-      filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.7));
-    }
-
-    .emblem-title {
       font-size: 3rem;
-      font-weight: 900;
-      font-style: italic;
-      line-height: 0.95;
-      letter-spacing: 2px;
-      background: linear-gradient(180deg, #ffffff, #a1a1aa);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #ffffff, #c084fc);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .emblem-tag {
-      margin-top: 16px;
-      padding: 6px 18px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.35);
+    .subtitle {
+      max-width: 680px;
+      margin: 0 auto 32px;
+      color: #b3b3b3;
+      font-size: 1.1rem;
+    }
+
+    .btn-discord {
+      display: inline-block;
+      background: linear-gradient(135deg, #7e22ce, #5865F2);
       color: #ffffff;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 2.5px;
+      text-decoration: none;
+      padding: 14px 36px;
+      border-radius: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(126, 34, 206, 0.4);
     }
 
-    /* Sections & Cards */
-    .section {
-      padding: 65px 8%;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    .btn-discord:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(126, 34, 206, 0.65);
     }
 
-    .section h3 {
-      font-size: 1.85rem;
-      margin-bottom: 28px;
+    /* Sections & Grid */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .section h3::before {
-      content: '';
-      width: 5px;
-      height: 26px;
-      background: #ffffff;
-      border-radius: 3px;
-      box-shadow: 0 0 12px #ffffff;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      color: #f3e8ff;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
     }
 
     .card {
-      background: linear-gradient(145deg, rgba(24, 24, 27, 0.8), rgba(9, 9, 11, 0.95));
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      padding: 25px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 12px;
-      transition: 0.25s;
+      padding: 28px;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: #ffffff;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.12);
+      border-color: rgba(192, 132, 252, 0.4);
+      transform: translateY(-4px);
     }
 
-    .card-icon {
-      font-size: 1.9rem;
-      margin-bottom: 12px;
-      filter: grayscale(100%) brightness(1.4);
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      color: #d8b4fe;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .card h4 {
-      color: #ffffff;
-      margin-bottom: 8px;
-      font-size: 1.15rem;
-      letter-spacing: 0.5px;
+    .card ul {
+      list-style: none;
     }
 
-    .card p {
-      color: #a1a1aa;
-      font-size: 0.92rem;
+    .card ul li {
+      padding: 8px 0;
+      color: #d4d4d8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
     }
 
-    /* Bottom Callout Banner */
-    .cta-banner {
-      margin: 40px 8% 70px;
-      padding: 45px 30px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #18181b, #09090b);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+    .card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .arrow {
+      color: #a855f7;
+      font-weight: bold;
+    }
+
+    /* Games Tag Strip */
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .game-badge {
+      background: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 8px;
+      padding: 16px;
       text-align: center;
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.06);
+      font-weight: 600;
+      color: #f3e8ff;
     }
 
-    .cta-banner h2 {
-      font-size: 2.2rem;
-      font-weight: 900;
+    /* Rules Box */
+    .rules-box {
+      background: rgba(239, 68, 68, 0.06);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: 12px;
+      padding: 28px;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .rules-box h3 {
+      color: #fca5a5;
+      margin-bottom: 14px;
+      text-align: center;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      letter-spacing: 1px;
     }
 
-    .cta-banner p {
-      color: #a1a1aa;
-      max-width: 520px;
-      margin: 0 auto 26px;
+    .rules-box ul {
+      list-style: none;
+      text-align: center;
+      color: #e4e4e7;
     }
 
+    .rules-box li {
+      margin: 8px 0;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 35px;
+      padding: 40px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       color: #71717a;
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 768px) {
-      h1 { font-size: 3.2rem; }
-      .nav-links { display: none; }
-      .emblem-box { width: 100%; max-width: 350px; height: 350px; }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.1rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="grid-bg"></div>
-
   <header>
-    <div class="brand"><span>&#9733;</span> ELITES EMPIRE <span>&#10022;</span></div>
-    <div class="nav-links">
-      <a href="#games">Games</a>
-      <a href="#perks">What We Offer</a>
-      <a href="#rules">Rules</a>
+    <div class="container">
+      <div class="ornament">╭─ ✧ ─ 👑 ─ ✧ ─╮</div>
+      <h1>★ Elites Empire ✦</h1>
+      <p class="subtitle">
+        Looking for a chill community to hang out, game, and make new friends? Welcome to Elites! We are an active, brand-new server built around getting together and having a great time.
+      </p>
+      <a href="YOUR_DISCORD_INVITE_LINK_HERE" target="_blank" class="btn-discord">
+        👉 JOIN OUR DISCORD TODAY
+      </a>
     </div>
-    <div class="status-pill"><div class="dot"></div> TRYOUTS OPEN</div>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <div class="subtitle">&#9733; Roblox Gaming Community &bull; Official Hub</div>
-      <h1>ELITES EMPIRE</h1>
-      <p>
-        Looking for a chill community to hang out, game, and make new friends? Welcome to Elites! We are an active, brand-new server built around getting together, dominating Roblox hubs, and having a great time.
-      </p>
-      <div class="btn-group">
-        <a href="https://discord.gg/KV9f2aBzG" target="_blank" class="btn-primary">Join Discord Server &#8599;</a>
-        <a href="#games" class="btn-secondary">Explore Divisions</a>
-      </div>
-    </div>
+  <main class="container">
 
-    <!-- Black & White Crown Emblem -->
-    <div class="emblem-box">
-      <svg class="crown-svg" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
-        <path d="M15 75L10 30L35 50L50 20L65 50L90 30L85 75H15Z" fill="url(#monoCrown)" stroke="#ffffff" stroke-width="3" stroke-linejoin="round"/>
-        <rect x="15" y="80" width="70" height="8" rx="4" fill="#ffffff"/>
-        <circle cx="10" cy="25" r="4" fill="#ffffff"/>
-        <circle cx="50" cy="14" r="5" fill="#ffffff"/>
-        <circle cx="90" cy="25" r="4" fill="#ffffff"/>
-        <defs>
-          <linearGradient id="monoCrown" x1="50" y1="20" x2="50" y2="75" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#ffffff"/>
+    <!-- Features & Community -->
+    <section>
+      <h2 class="section-title">Server Overview</h2>
+      <div class="grid">
+
+        <div class="card">
+          <h3>✨ What We Offer</h3>
+          <ul>
+            <li><span class="arrow">→</span> Easy Onboarding & Self-Roles</li>
+            <li><span class="arrow">→</span> Server Introductions</li>
+            <li><span class="arrow">→</span> Level Rewards & Bot Commands</li>
+            <li><span class="arrow">→</span> Staff Applications & Collabs Open!</li>
+            <li><span class="arrow">→</span> Server Economy & Fun Bots</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>💎 Server Perks & Milestones</h3>
+          <ul>
+            <li><span class="arrow">→</span> Brand New Server — Get in early and grab exclusive early member roles!</li>
+            <li><span class="arrow">→</span> Booster Perks — Custom roles, exclusive chat access, and special perks for server boosters!</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🌐 Community Hub</h3>
+          <ul>
+            <li><span class="arrow">→</span> Main Chat & Lounge Channels</li>
+            <li><span class="arrow">→</span> Dedicated Counter Channel</li>
+            <li><span class="arrow">→</span> Gallery & Artist/Designer Showcases</li>
+            <li><span class="arrow">→</span> Giveaways, Server Events & Suggestions</li>
+            <li><span class="arrow">→</span> Partner Program Open</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Roblox & Gaming Hubs -->
+    <section>
+      <h2 class="section-title">🎮 Roblox & Gaming Hubs</h2>
+      <p style="text-align: center; color: #a1a1aa; margin-bottom: 24px;">
+        Clan Tryouts & Game Owners Meeting Room Open! Jump into our dedicated channels:
+      </p>
+      <div class="games-grid">
+        <div class="game-badge">⚔️ Blox Fruits</div>
+        <div class="game-badge">🎯 Rivals</div>
+        <div class="game-badge">🏃 Evade</div>
+        <div class="game-badge">🔫 Da Hood</div>
+        <div class="game-badge">🔪 Murder Mystery 2</div>
+      </div>
+    </section>
+
+    <!-- Server Rules -->
+    <section>
+      <div class="rules-box">
+        <h3>🚨 Server Rules & Age Requirements</h3>
+        <ul>
+          <li><strong>→ Must be 13+ to join</strong></li>
+          <li><strong>→ Respect everyone, follow the rules, and keep it friendly!</strong></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 ★ Elites Empire ✦ | Official Roblox Clan & Community</p>
+  </footer>
+
+</body>
+</html>
