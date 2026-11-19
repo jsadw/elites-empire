@@ -417,29 +417,3 @@
     </nav>
 
     <button class="music-btn" onclick="toggleMusic()">
-★ Elites Clan ✦ • Built for Chill Gaming & Competitive Squads
-function openTab(tabId, btnElement) {
-document.querySelectorAll('.tab-page').forEach(page => page.classList.remove('active'));
-document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-document.getElementById(tabId).classList.add('active');
-if (btnElement) btnElement.classList.add('active');
-window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-const audio = document.getElementById('bg-music');
-const label = document.getElementById('music-label');
-const dot = document.getElementById('dot');
-let playing = false;
-function toggleMusic() {
-if (!playing) {
-audio.play().catch(() => alert("Upload an MP3 file named 'music.mp3' into your GitHub repository to enable music!"));
-label.textContent = "Music on";
-dot.style.backgroundColor = "#38bdf8";
-dot.style.boxShadow = "0 0 10px #38bdf8";
-} else {
-audio.pause();
-label.textContent = "Music off";
-dot.style.backgroundColor = "#64748b";
-dot.style.boxShadow = "none";
-}
-playing = !playing;
-}
