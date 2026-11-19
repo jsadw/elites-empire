@@ -1,15 +1,138 @@
-<a href="https://discord.gg/KV9f2aBzG" class="btn primary">
-    Join Discord ↗
-</a><link href="<a href='https://fonts.googleapis.com/...'>"<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet"><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ELITES Community</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* Red Grid Background */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(255,0,0,.08) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,0,0,.08) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:-1;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+border-bottom:1px solid rgba(255,255,255,.1);
+background:#080808;
+}
+
+.logo{
+font-size:32px;
+font-weight:900;
+color:#ff2b2b;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:100px;
+padding:50px 10%;
+}
+
+.hero-left{
+max-width:500px;
+}
+
+.small-title{
+font-size:12px;
+letter-spacing:3px;
+color:#ff2b2b;
+margin-bottom:15px;
+}
+
+.hero h1{
+font-size:120px;
+line-height:.9;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.hero p{
+line-height:1.8;
+color:#d0d0d0;
+}
+
+.buttons{
+margin-top:25px;
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:14px 24px;
+border-radius:8px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.primary{
+background:#ff2b2b;
+color:white;
+}
+
+.primary:hover{
+box-shadow:0 0 25px rgba(255,43,43,.8);
+}
+
+.secondary{
+border:1px solid #ff2b2b;
+color:white;
+}
+
+.secondary:hover{
+background:#ff2b2b;
+}
+
+.hero-right img{
+width:420px;
+max-width:100%;
+border:2px solid #ff2b2b;
+border-radius:12px;
+box-shadow:0 0 40px rgba(255,0,0,.7);
+}
+
+section{
+padding:100px 10%;
 }
 
 .offer-container{
-max-width:700px;
+max-width:800px;
 margin:auto;
 }
 
@@ -19,29 +142,42 @@ margin-bottom:20px;
 }
 
 .offer-container ul{
-padding-left:20px;
 line-height:2;
+padding-left:25px;
 }
 
 #offer,
 #requirements{
-background:#010b1d;
+background:#080808;
 border-top:1px solid rgba(255,255,255,.08);
 }
 
+footer{
+padding:30px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
 .hero h1{
-font-size:110px;
-line-height:.9;
-font-weight:900;
+font-size:70px;
 }
 
-.hero-right img{
-width:380px;
-border:2px solid #62a0ff;
-box-shadow:0 0 35px rgba(98,160,255,.6);
+.buttons{
+justify-content:center;
+flex-wrap:wrap;
+}
 }
 
-</style><body>
+</style>
+</head>
+<body>
 
 <nav>
 <div class="logo">ELITES</div>
@@ -58,13 +194,13 @@ ELITES DISCORD COMMUNITY
 <h1>ELITES</h1>
 
 <p>
-Looking for a chill community to hang out, game,
-and make new friends? Welcome to Elites!
+Looking for a chill community to hang out, game, and make new friends?
+Welcome to ELITES! Join our growing Roblox community, participate in events, make friends, and become part of the clan.
 </p>
 
 <div class="buttons">
 
-<a href="https://discord.gg/KV9f2aBzG" class="btn primary">
+<a href="https://discord.gg/KV9f2aBzG" target="_blank" class="btn primary">
 Join Discord ↗
 </a>
 
@@ -77,9 +213,79 @@ Requirements
 </div>
 
 <div class="hero-right">
-<img src="your-logo.png" alt="Elites Clan">
+
+<img src="logo.jpg" alt="ELITES Clan Logo">
+
 </div>
 
 </section>
 
+<section id="offer">
+
+<div class="offer-container">
+
+<div class="small-title">
+ELITES COMMUNITY
+</div>
+
+<h2>What We Offer</h2>
+
+<ul>
+<li>⚡ Easy Onboarding & Self-Roles</li>
+<li>✨ Server Introductions</li>
+<li>📈 Level Rewards & Bot Commands</li>
+<li>🔨 Staff Applications & Collabs Open</li>
+<li>🪙 Server Economy & Fun Bots</li>
+<li>💎 Early Member Perks</li>
+<li>💠 Booster Perks & Custom Roles</li>
+<li>💬 Main Community Chat</li>
+<li>🔢 Dedicated Counter Channel</li>
+<li>📷 Gallery & Designer Showcases</li>
+<li>🎉 Giveaways & Events</li>
+<li>🤝 Partner Program</li>
+<li>🎮 Roblox Gaming Community</li>
+<li>⚔️ Blox Fruits & Rivals</li>
+<li>🏃 Evade</li>
+<li>🔫 Da Hood & Murder Mystery 2</li>
+<li>💼 Clan Tryouts & Owner Meetings</li>
+</ul>
+
+</div>
+
+</section>
+
+<section id="requirements">
+
+<div class="offer-container">
+
+<div class="small-title">
+ELITES COMMUNITY
+</div>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>✅ Must be 13+ to Join</li>
+<li>✅ Respect Everyone</li>
+<li>✅ Follow Server Rules</li>
+<li>✅ Keep It Friendly</li>
+<li>✅ No Toxicity or Harassment</li>
+<li>✅ Stay Active & Have Fun</li>
+</ul>
+
+<br>
+
+<a href="https://discord.gg/KV9f2aBzG" target="_blank" class="btn primary">
+Join ELITES
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 ELITES COMMUNITY
+</footer>
+
 </body>
+</html>
