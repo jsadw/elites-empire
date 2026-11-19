@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elites Empire | Official Roblox Clan</title>
+  <title>★ Elites Empire ✦ | Official Roblox Clan</title>
   <style>
     * {
       box-sizing: border-box;
@@ -14,92 +14,100 @@
     }
 
     body {
-      background: radial-gradient(circle at 80% 20%, #0f2e63, #050811 65%);
+      background-color: #050505;
+      background-image: 
+        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.08), transparent 45%),
+        radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.05), transparent 45%);
       color: #ffffff;
       min-height: 100vh;
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* Animated Background Glow */
-    .bg-glow {
+    /* Subtle Grid Overlay */
+    .grid-bg {
       position: fixed;
-      top: -150px;
-      right: -150px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.22), transparent 70%);
-      filter: blur(60px);
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
       z-index: -1;
-      animation: pulseGlow 6s infinite alternate;
+      pointer-events: none;
     }
 
-    @keyframes pulseGlow {
-      0% { transform: scale(1); opacity: 0.7; }
-      100% { transform: scale(1.25); opacity: 1; }
-    }
-
-    /* Top Bar */
+    /* Sticky Top Navbar */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 8%;
-      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-      backdrop-filter: blur(10px);
+      padding: 18px 8%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(5, 8, 17, 0.75);
+      background: rgba(5, 5, 5, 0.85);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-weight: 900;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       font-size: 1.15rem;
+      text-transform: uppercase;
     }
 
     .brand span {
-      background: linear-gradient(135deg, #38bdf8, #818cf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 1.3rem;
+      color: #ffffff;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
     }
 
-    .nav-right {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #a1a1aa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
     }
 
     .status-pill {
       display: flex;
       align-items: center;
       gap: 8px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      color: #6ee7b7;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
       padding: 6px 14px;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
+      letter-spacing: 1px;
     }
 
     .dot {
       width: 8px;
       height: 8px;
-      background: #10b981;
+      background: #ffffff;
       border-radius: 50%;
-      box-shadow: 0 0 8px #10b981;
-      animation: blink 1.5s infinite;
+      box-shadow: 0 0 10px #ffffff;
+      animation: pulseDot 1.6s infinite;
     }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.85); }
     }
 
     /* Hero Section */
@@ -108,7 +116,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding: 70px 8% 90px;
+      padding: 80px 8% 95px;
       gap: 50px;
     }
 
@@ -117,31 +125,31 @@
     }
 
     .subtitle {
-      color: #38bdf8;
+      color: #a1a1aa;
       font-size: 0.85rem;
       font-weight: 800;
-      letter-spacing: 3px;
+      letter-spacing: 3.5px;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     h1 {
-      font-size: 4.5rem;
+      font-size: 4.6rem;
       font-weight: 900;
       line-height: 0.95;
       text-transform: uppercase;
       font-style: italic;
       margin-bottom: 22px;
-      background: linear-gradient(to bottom, #ffffff 40%, #7dd3fc 100%);
+      background: linear-gradient(180deg, #ffffff 30%, #71717a 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.45));
+      filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.2));
     }
 
     .hero-text p {
-      color: #cbd5e1;
+      color: #d4d4d8;
       font-size: 1.05rem;
-      margin-bottom: 32px;
+      margin-bottom: 34px;
     }
 
     .btn-group {
@@ -151,54 +159,56 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #38bdf8, #2563eb);
-      color: #ffffff;
-      padding: 15px 30px;
+      background: #ffffff;
+      color: #050505;
+      padding: 15px 32px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 800;
       letter-spacing: 0.5px;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.45);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
       transition: 0.25s;
     }
 
     .btn-primary:hover {
+      background: #e4e4e7;
       transform: translateY(-3px);
-      box-shadow: 0 0 35px rgba(56, 189, 248, 0.8);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.65);
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.05);
       color: #ffffff;
       padding: 15px 28px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       transition: 0.25s;
     }
 
     .btn-secondary:hover {
-      background: rgba(56, 189, 248, 0.15);
+      background: rgba(255, 255, 255, 0.14);
+      border-color: #ffffff;
       transform: translateY(-3px);
     }
 
-    /* Glowing Electric Emblem Card */
+    /* Monochrome Clan Emblem Box */
     .emblem-box {
       position: relative;
-      width: 390px;
-      height: 390px;
+      width: 380px;
+      height: 380px;
       border-radius: 16px;
-      background: radial-gradient(circle at center, #0c244a 0%, #050811 85%);
-      border: 2px solid #38bdf8;
-      box-shadow: 0 0 50px rgba(56, 189, 248, 0.35), inset 0 0 30px rgba(56, 189, 248, 0.25);
+      background: radial-gradient(circle at center, #18181b 0%, #050505 85%);
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 45px rgba(255, 255, 255, 0.18), inset 0 0 30px rgba(255, 255, 255, 0.1);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 25px;
-      animation: floatCard 4s ease-in-out infinite;
+      animation: floatCard 4.5s ease-in-out infinite;
     }
 
     @keyframes floatCard {
@@ -207,10 +217,10 @@
     }
 
     .crown-svg {
-      width: 110px;
-      height: 110px;
-      margin-bottom: 10px;
-      filter: drop-shadow(0 0 18px #38bdf8);
+      width: 105px;
+      height: 105px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.7));
     }
 
     .emblem-title {
@@ -219,32 +229,31 @@
       font-style: italic;
       line-height: 0.95;
       letter-spacing: 2px;
-      background: linear-gradient(to bottom, #ffffff, #38bdf8);
+      background: linear-gradient(180deg, #ffffff, #a1a1aa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
     }
 
     .emblem-tag {
-      margin-top: 14px;
-      padding: 5px 16px;
+      margin-top: 16px;
+      padding: 6px 18px;
       border-radius: 20px;
-      background: rgba(56, 189, 248, 0.15);
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      color: #7dd3fc;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 2.5px;
     }
 
-    /* Sections & Interactive Cards */
+    /* Sections & Cards */
     .section {
       padding: 65px 8%;
-      border-top: 1px solid rgba(56, 189, 248, 0.12);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .section h3 {
-      font-size: 1.9rem;
+      font-size: 1.85rem;
       margin-bottom: 28px;
       text-transform: uppercase;
       letter-spacing: 1.5px;
@@ -255,22 +264,22 @@
 
     .section h3::before {
       content: '';
-      width: 6px;
+      width: 5px;
       height: 26px;
-      background: #38bdf8;
-      border-radius: 4px;
-      box-shadow: 0 0 12px #38bdf8;
+      background: #ffffff;
+      border-radius: 3px;
+      box-shadow: 0 0 12px #ffffff;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
       gap: 22px;
     }
 
     .card {
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.85), rgba(5, 8, 17, 0.9));
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      background: linear-gradient(145deg, rgba(24, 24, 27, 0.8), rgba(9, 9, 11, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.14);
       padding: 25px;
       border-radius: 12px;
       transition: 0.25s;
@@ -278,98 +287,102 @@
 
     .card:hover {
       transform: translateY(-5px);
-      border-color: #38bdf8;
-      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+      border-color: #ffffff;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.12);
     }
 
     .card-icon {
-      font-size: 2rem;
+      font-size: 1.9rem;
       margin-bottom: 12px;
+      filter: grayscale(100%) brightness(1.4);
     }
 
     .card h4 {
-      color: #38bdf8;
+      color: #ffffff;
       margin-bottom: 8px;
       font-size: 1.15rem;
+      letter-spacing: 0.5px;
     }
 
     .card p {
-      color: #94a3b8;
+      color: #a1a1aa;
       font-size: 0.92rem;
+    }
+
+    /* Bottom Callout Banner */
+    .cta-banner {
+      margin: 40px 8% 70px;
+      padding: 45px 30px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #18181b, #09090b);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      text-align: center;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.06);
+    }
+
+    .cta-banner h2 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .cta-banner p {
+      color: #a1a1aa;
+      max-width: 520px;
+      margin: 0 auto 26px;
     }
 
     footer {
       text-align: center;
       padding: 35px;
-      color: #64748b;
+      color: #71717a;
       font-size: 0.85rem;
-      border-top: 1px solid rgba(56, 189, 248, 0.12);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 3.2rem; }
+      .nav-links { display: none; }
+      .emblem-box { width: 100%; max-width: 350px; height: 350px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="bg-glow"></div>
+  <div class="grid-bg"></div>
 
   <header>
-    <div class="brand"><span>&#9889; EE</span> | ELITES EMPIRE</div>
-    <div class="nav-right">
-      <div class="status-pill"><div class="dot"></div> TRYOUTS OPEN</div>
+    <div class="brand"><span>&#9733;</span> ELITES EMPIRE <span>&#10022;</span></div>
+    <div class="nav-links">
+      <a href="#games">Games</a>
+      <a href="#perks">What We Offer</a>
+      <a href="#rules">Rules</a>
     </div>
+    <div class="status-pill"><div class="dot"></div> TRYOUTS OPEN</div>
   </header>
 
   <section class="hero">
     <div class="hero-text">
-      <div class="subtitle">Roblox Gaming Community &bull; Official Hub</div>
+      <div class="subtitle">&#9733; Roblox Gaming Community &bull; Official Hub</div>
       <h1>ELITES EMPIRE</h1>
       <p>
-        Welcome to Elites Empire—an active, fast-growing Roblox clan built for competitive players and chill hangouts. Join our Discord for crew tryouts, massive giveaways, level rewards, and daily squad runs.
+        Looking for a chill community to hang out, game, and make new friends? Welcome to Elites! We are an active, brand-new server built around getting together, dominating Roblox hubs, and having a great time.
       </p>
       <div class="btn-group">
-        <!-- REPLACE YOUR-INVITE WITH YOUR REAL DISCORD INVITE CODE -->
-        <a href="https://discord.gg" target="_blank" class="btn-primary">Join Discord Server &#8599;</a>
+        <a href="https://discord.gg/KV9f2aBzG" target="_blank" class="btn-primary">Join Discord Server &#8599;</a>
         <a href="#games" class="btn-secondary">Explore Divisions</a>
       </div>
     </div>
 
-    <!-- Custom Electric Crown Emblem -->
+    <!-- Black & White Crown Emblem -->
     <div class="emblem-box">
       <svg class="crown-svg" viewBox="0 0 100 100" fill="none" xmlns="http://w3.org">
-        <path d="M15 75L10 30L35 50L50 20L65 50L90 30L85 75H15Z" fill="url(#crownGrad)" stroke="#ffffff" stroke-width="3" stroke-linejoin="round"/>
-        <rect x="15" y="80" width="70" height="8" rx="4" fill="#38bdf8"/>
+        <path d="M15 75L10 30L35 50L50 20L65 50L90 30L85 75H15Z" fill="url(#monoCrown)" stroke="#ffffff" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="15" y="80" width="70" height="8" rx="4" fill="#ffffff"/>
         <circle cx="10" cy="25" r="4" fill="#ffffff"/>
         <circle cx="50" cy="14" r="5" fill="#ffffff"/>
         <circle cx="90" cy="25" r="4" fill="#ffffff"/>
         <defs>
-          <linearGradient id="crownGrad" x1="50" y1="20" x2="50" y2="75" gradientUnits="userSpaceOnUse">
+          <linearGradient id="monoCrown" x1="50" y1="20" x2="50" y2="75" gradientUnits="userSpaceOnUse">
             <stop stop-color="#ffffff"/>
-            <stop offset="1" stop-color="#0284c7"/>
-          </linearGradient>
-        </defs>
-      </svg>
-      <div class="emblem-title">ELITES<br>EMPIRE</div>
-      <div class="emblem-tag">&#9889; EST. 2026 &bull; ROBLOX &#9889;</div>
-    </div>
-  </section>
-
-  <section class="section" id="games">
-    <h3>Active Roblox Divisions</h3>
-    <div class="grid">
-      <div class="card">
-        <div class="card-icon">&#9876;&#65039;</div>
-        <h4>Blox Fruits &amp; Rivals</h4>
-        <p>Dominate PvP arenas, crew raids, bounty hunts, and competitive ranked matches.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#128299;</div>
-        <h4>Da Hood &amp; MM2</h4>
-        <p>Join active turf wars, private trading servers, and high-stakes clan tournaments.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#127939;</div>
-        <h4>Evade</h4>
-        <p>Team up with top clan runners for high-streak survival lobbies and speedruns.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#128081;</div>
-        <h4>Clan Tryouts</h4>
